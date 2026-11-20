@@ -4,6 +4,7 @@ import { ButtonPrimary, ButtonSecondary } from "@/components/buttons";
 import { CallToAction } from "@/components/call-to-action";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
+import { ValueCards } from "@/components/value-cards";
 import { articles } from "@/data/articles";
 
 const features = [
@@ -11,24 +12,6 @@ const features = [
   { title: "Model", number: "002", body: "Forecast performance and goal alignment" },
   { title: "Report", number: "003", body: "Generate ESG disclosures, automate frameworks" },
   { title: "Act", number: "004", body: "Surface insights and operational next steps" },
-];
-
-const values = [
-  {
-    icon: "/images/icon-clarity.svg",
-    title: "Clarity drives action",
-    body: "We believe better decisions start with better data—measured, visible, and trusted.",
-  },
-  {
-    icon: "/images/icon-systems.svg",
-    title: "Sustainability is a systems problem",
-    body: "We build tools that help teams connect the dots between operations, impact, and accountability.",
-  },
-  {
-    icon: "/images/icon-progress.svg",
-    title: "Progress over perfection",
-    body: "We support real-world momentum—helping organizations move from ambition to measurable change.",
-  },
 ];
 
 const latestArticles = articles.slice(0, 3);
@@ -132,21 +115,7 @@ export default function Home() {
         <div className="relative w-full max-w-[1500px]">
           <DisplayHeading serif="Built for clarity" sans="Designed for action" />
         </div>
-        <ul className="relative grid w-full max-w-[1500px] gap-4 md:grid-cols-3">
-          {values.map((v, i) => (
-            <li
-              key={v.title}
-              aria-label={`Principle ${i + 1}`}
-              className="flex min-h-[246px] flex-col gap-6 rounded-2xl bg-white p-8 md:p-10"
-            >
-              <Image src={v.icon} alt="" width={42} height={42} />
-              <div className="flex flex-col gap-2 text-black">
-                <h3 className={itemTitle}>{v.title}</h3>
-                <p className={paragraph}>{v.body}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <ValueCards tone="white" />
       </section>
 
       <section id="case-study" className="flex w-full scroll-mt-16 flex-col items-center px-5 py-20 md:py-[120px]">
