@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ButtonPrimary, ButtonSecondary } from "@/components/buttons";
 import { CallToAction } from "@/components/call-to-action";
+import { DisplayHeading } from "@/components/display-heading";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 import { ValueCards } from "@/components/value-cards";
@@ -15,24 +16,6 @@ const features = [
 ];
 
 const latestArticles = articles.slice(0, 3);
-
-/** Two-line display heading: serif line over sans line (Header 1 + Header 2 styles). */
-function DisplayHeading({
-  serif,
-  sans,
-  as: Tag = "h2",
-}: {
-  serif: string;
-  sans: string;
-  as?: "h1" | "h2";
-}) {
-  return (
-    <Tag className="flex w-full flex-col items-center text-center text-[48px] leading-none text-black sm:text-[64px] lg:text-[80px]">
-      <span className="mb-[-0.1em] block font-serif tracking-[-0.04em]">{serif}</span>
-      <span className="block font-sans font-normal tracking-[-0.05em]">{sans}</span>
-    </Tag>
-  );
-}
 
 const sectionHeading =
   "w-full max-w-[612px] text-center font-sans text-[32px] leading-none font-medium tracking-[-0.03em] text-black md:text-[40px]";

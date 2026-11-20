@@ -144,7 +144,7 @@ export default function AboutPage() {
         tone="white"
         heading="We’re hiring! Want to join the team?"
         buttonLabel="View open roles"
-        href="/#contact"
+        href="/careers"
       />
 
       <Footer />
