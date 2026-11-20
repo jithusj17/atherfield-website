@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Typography (from Figma text styles) */
+  --font-serif: var(--font-source-serif), Georgia, serif;
+  --font-sans: var(--font-radio-canada), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Colors (from Figma color styles) */
+  --color-muted: #6c6c6c;
+  --color-divider: #dbe0ec;
+  --color-surface: #f6f8fb;
+  --color-sticker: #2683eb;
+  --color-footer: #fff546;
+  --color-footer-text: #66640f;
+  --color-sky: #a8d3ff;
+  --color-cream: #fff4df;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-serif);
+}
