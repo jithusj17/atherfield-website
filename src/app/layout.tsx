@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Radio_Canada_Big, Source_Serif_4 } from "next/font/google";
+import { Footer } from "@/components/footer";
+import { Navigation } from "@/components/navigation";
 import "./globals.css";
 
 const sourceSerif = Source_Serif_4({
@@ -30,7 +32,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll-behavior="smooth"
       className={`${sourceSerif.variable} ${radioCanada.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <Navigation />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

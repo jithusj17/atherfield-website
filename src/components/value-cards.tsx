@@ -31,8 +31,8 @@ export function ValueCards({ tone = "white" }: { tone?: "white" | "grey" }) {
         >
           <Image src={v.icon} alt="" width={42} height={42} />
           <div className="flex flex-col gap-2 text-black">
-            <h3 className="font-sans text-xl leading-none font-medium tracking-[-0.02em]">{v.title}</h3>
-            <p className="font-serif text-xl leading-[1.2] tracking-[-0.04em]">{v.body}</p>
+            <h3 className="type-title">{v.title}</h3>
+            <p className="type-body">{v.body}</p>
           </div>
         </li>
       ))}

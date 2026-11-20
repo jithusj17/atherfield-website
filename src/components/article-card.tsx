@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MetaLine } from "@/components/meta-line";
 import type { Article } from "@/data/articles";
 
 type ArticleCardProps = {
@@ -27,8 +28,8 @@ export function ArticleCard({
         />
       </div>
       <div className="flex flex-col gap-6 text-black">
-        <div className="flex flex-col gap-2 leading-none">
-          <Heading className="font-sans text-xl leading-none font-medium tracking-[-0.02em]">
+        <div className="flex flex-col gap-2">
+          <Heading className="type-title">
             <Link
               href={`/journal/${article.slug}`}
               className="after:absolute after:inset-0 group-hover:underline"
@@ -36,13 +37,9 @@ export function ArticleCard({
               {article.title}
             </Link>
           </Heading>
-          <p className="flex gap-2 font-mono text-sm text-muted">
-            <span>{article.category}</span>
-            <span aria-hidden>·</span>
-            <span>{article.readTime}</span>
-          </p>
+          <MetaLine items={[article.category, article.readTime]} />
         </div>
-        <p className="font-serif text-xl leading-[1.2] tracking-[-0.04em]">{article.excerpt}</p>
+        <p className="type-body">{article.excerpt}</p>
       </div>
     </article>
   );

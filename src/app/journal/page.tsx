@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArticleCard } from "@/components/article-card";
 import { CallToAction } from "@/components/call-to-action";
-import { Footer } from "@/components/footer";
-import { Navigation } from "@/components/navigation";
 import { articles } from "@/data/articles";
 
 export const metadata: Metadata = {
@@ -14,8 +12,6 @@ export const metadata: Metadata = {
 export default function JournalPage() {
   return (
     <>
-      <Navigation />
-
       <header className="flex w-full flex-col items-center px-5 pt-[60px]">
         <div className="relative aspect-[1240/480] max-h-[580.6452px] w-full max-w-[1500px]">
           <Image
@@ -30,9 +26,7 @@ export default function JournalPage() {
       </header>
 
       <main className="flex w-full flex-col items-center gap-10 px-5 pt-20 pb-10">
-        <h1 className="w-full max-w-[612px] text-center font-sans text-[32px] leading-none font-medium tracking-[-0.03em] text-black md:text-[40px]">
-          Latest articles
-        </h1>
+        <h1 className="type-heading w-full max-w-[612px] text-center text-black">Latest articles</h1>
 
         <ul className="grid w-full max-w-[1540px] gap-x-4 gap-y-14 pb-20 md:grid-cols-2 md:gap-y-20 md:pb-[120px]">
           {articles.map((a) => (
@@ -49,8 +43,6 @@ export default function JournalPage() {
         buttonLabel="Sign up to newsletter"
         href="#subscribe"
       />
-
-      <Footer />
     </>
   );
 }
