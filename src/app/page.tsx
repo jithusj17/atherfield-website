@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ButtonPrimary, ButtonSecondary } from "@/components/buttons";
 import { CallToAction } from "@/components/call-to-action";
 import { Footer } from "@/components/footer";
@@ -180,12 +181,19 @@ export default function Home() {
           <ul className="w-full">
             {latestArticles.map((a) => (
               <li key={a.slug} className="border-b border-divider first:border-t">
-                <article className="flex items-start justify-between gap-4 py-6">
+                <article className="group relative flex items-start justify-between gap-4 py-6">
                   <div className="relative aspect-[165/100] w-[110px] shrink-0 sm:w-[165px]">
                     <Image src={a.image} alt="" fill sizes="165px" className="object-cover" />
                   </div>
                   <div className="flex w-full flex-col gap-2 leading-none sm:w-[439px]">
-                    <h3 className={itemTitle}>{a.title}</h3>
+                    <h3 className={itemTitle}>
+                      <Link
+                        href={`/journal/${a.slug}`}
+                        className="after:absolute after:inset-0 group-hover:underline"
+                      >
+                        {a.title}
+                      </Link>
+                    </h3>
                     <p className="flex gap-2 font-mono text-sm text-muted">
                       <span>{a.category}</span>
                       <span aria-hidden>·</span>
