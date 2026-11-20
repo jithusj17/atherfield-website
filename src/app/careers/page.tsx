@@ -3,7 +3,7 @@ import { ButtonSecondary } from "@/components/buttons";
 import { DisplayHeading } from "@/components/display-heading";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
-import { roles } from "@/data/roles";
+import { applyHref, roles } from "@/data/roles";
 
 export const metadata: Metadata = {
   title: "Careers | Aetherfield",
@@ -60,7 +60,7 @@ export default function CareersPage() {
               </div>
               <p className={roleBody}>Don’t see your role available? Apply for an open application!</p>
             </div>
-            <ButtonSecondary href="mailto:careers@aetherfield.com?subject=Open%20application">
+            <ButtonSecondary href={applyHref("Open application")}>
               Apply now
               <span className="sr-only">: send an open application</span>
             </ButtonSecondary>
