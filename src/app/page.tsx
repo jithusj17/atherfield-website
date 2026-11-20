@@ -11,7 +11,10 @@ export default function Home() {
     <>
       <div className="relative flex w-full flex-col">
         {/* Sky-to-cream gradient behind the hero and the top of the features section */}
-        <div aria-hidden className="absolute inset-[0_0_58.25%_0] bg-gradient-to-b from-sky to-cream" />
+        <div
+          aria-hidden
+          className="absolute inset-[0_0_65.24%_0] bg-gradient-to-b from-sky to-cream md:inset-[0_0_58.25%_0]"
+        />
         <Hero />
         <Features />
       </div>

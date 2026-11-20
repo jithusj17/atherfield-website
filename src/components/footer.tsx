@@ -4,28 +4,23 @@ import { getStartedHref, navLinks } from "./nav-links";
 
 export function Footer() {
   return (
-    <footer className="flex flex-col items-center gap-5 bg-footer p-5">
-      <div className="flex w-full flex-col gap-4 text-xl text-footer-text sm:flex-row sm:items-center sm:justify-between">
-        <ul className="flex flex-wrap items-center gap-5 font-sans leading-none font-medium tracking-[-0.4px]">
-          {navLinks.map((link) => (
+    <footer className="flex flex-col items-center gap-4 bg-footer px-5 pt-10 pb-5 md:gap-5 md:pt-5">
+      <div className="flex w-full flex-col gap-10 text-footer-text md:flex-row md:items-center md:justify-between md:gap-4">
+        <ul className="flex flex-wrap items-center justify-center gap-4 md:justify-start md:gap-5">
+          {[...navLinks, { label: "Get started", href: getStartedHref }].map((link) => (
             <li key={link.label}>
-              <Link href={link.href} className="hover:opacity-70">
+              <Link href={link.href} className="type-title-lg block hover:opacity-70">
                 {link.label}
               </Link>
             </li>
           ))}
-          <li>
-            <Link href={getStartedHref} className="hover:opacity-70">
-              Get started
-            </Link>
-          </li>
         </ul>
-        <p className="font-serif leading-[1.2] tracking-[-0.8px] whitespace-pre sm:text-right">
+        <p className="type-body-lg text-center whitespace-pre md:text-right">
           {"© 2025  ·  All rights reserved"}
         </p>
       </div>
 
-      <div aria-hidden className="relative h-[160px] w-full opacity-90 mix-blend-multiply sm:h-[280px]">
+      <div aria-hidden className="relative h-[120px] w-full opacity-90 mix-blend-multiply md:h-[280px]">
         <Image src="/images/footer.png" alt="" fill sizes="100vw" className="object-cover" />
       </div>
 

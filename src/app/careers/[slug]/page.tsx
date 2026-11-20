@@ -31,13 +31,13 @@ export default async function RolePage({ params }: PageProps<"/careers/[slug]">)
   const apply = applyHref(`Application: ${role.title}`);
 
   return (
-    <main className="flex w-full flex-col items-center gap-10 bg-gradient-to-b from-sky to-cream px-5 pt-[120px] pb-20 md:pt-[140px] md:pb-[120px]">
-      <Link href="/careers" className="type-body text-black hover:underline">
+    <main className="flex w-full flex-col items-center gap-6 bg-gradient-to-b from-sky to-cream px-5 py-[120px] md:gap-10 md:pt-[140px]">
+      <Link href="/careers" className="type-body-lg text-black hover:underline">
         <span aria-hidden>← </span>Back to Careers
       </Link>
 
-      <article className="relative flex w-full max-w-[820px] flex-col gap-12 rounded-2xl bg-white p-6 sm:p-10">
-        <header className="flex flex-col items-start gap-6 sm:flex-row sm:gap-10">
+      <article className="relative flex w-full max-w-[820px] flex-col gap-8 rounded-2xl bg-white px-6 pt-6 pb-8 md:gap-12 md:p-10">
+        <header className="flex flex-col items-start gap-6 md:flex-row md:gap-10">
           <div className="flex min-w-0 flex-1 flex-col gap-6">
             <div className="flex flex-col gap-2">
               <h1 className="type-heading text-black">{role.title}</h1>
@@ -81,7 +81,7 @@ export default async function RolePage({ params }: PageProps<"/careers/[slug]">)
         <section className="relative flex flex-col items-center gap-6">
           <h2 className="type-heading text-center text-black">
             Ready to help build the
-            <br className="hidden sm:block" /> future of climate intelligence?
+            <br className="hidden md:block" /> future of climate intelligence?
           </h2>
           <ButtonPrimary href={apply}>Apply now</ButtonPrimary>
 

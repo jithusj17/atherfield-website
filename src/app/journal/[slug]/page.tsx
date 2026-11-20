@@ -33,9 +33,9 @@ export default async function ArticlePage({ params }: PageProps<"/journal/[slug]
   return (
     <>
       <article className="flex w-full flex-col items-center pt-[60px]">
-        <header className="flex w-full flex-col items-center gap-4 px-5 pt-20 pb-10 text-center">
+        <header className="flex w-full flex-col items-center gap-4 px-5 pt-[60px] pb-10 text-center md:pt-20">
           <MetaLine variant="body" items={[article.category, article.readTime]} />
-          <h1 className="w-full max-w-[1030px] font-sans text-[44px] leading-none font-normal tracking-[-0.05em] text-black sm:text-[60px] lg:text-[80px]">
+          <h1 className="w-full max-w-[1030px] font-sans text-[36px] leading-none font-normal tracking-[-0.02em] text-black md:text-[60px] md:tracking-[-0.05em] lg:text-[80px]">
             {article.headline}
           </h1>
         </header>
@@ -53,21 +53,21 @@ export default async function ArticlePage({ params }: PageProps<"/journal/[slug]
           </div>
         </div>
 
-        <div className="flex w-full max-w-[1500px] flex-col gap-10 px-5 pt-14 md:flex-row md:items-start md:justify-between md:px-10 md:pt-20 lg:px-[100px]">
-          <dl className="flex shrink-0 flex-row gap-10 md:w-[200px] md:flex-col">
-            <div className="flex flex-col gap-1">
+        <div className="flex w-full max-w-[1500px] flex-col gap-8 px-5 pt-10 md:flex-row md:items-start md:justify-between md:gap-10 md:px-10 md:pt-20 lg:px-[100px]">
+          <dl className="flex shrink-0 flex-row gap-4 md:w-[200px] md:flex-col md:gap-10">
+            <div className="flex flex-1 flex-col gap-1 md:flex-none">
               <dt className="type-body text-muted">Published</dt>
               <dd className="type-label text-black">
                 <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
               </dd>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-1 flex-col gap-1 md:flex-none">
               <dt className="type-body text-muted">Author</dt>
               <dd className="type-label text-black">{article.author}</dd>
             </div>
           </dl>
 
-          <div className="flex w-full min-w-0 flex-col gap-12 md:max-w-[740px] md:flex-1">
+          <div className="flex w-full min-w-0 flex-col gap-10 md:max-w-[740px] md:flex-1 md:gap-12">
             <p className="type-article text-black">{article.intro}</p>
             <Divider />
             {article.body.length > 0 && (
@@ -85,17 +85,17 @@ export default async function ArticlePage({ params }: PageProps<"/journal/[slug]
 
       <aside
         aria-labelledby="recent-articles"
-        className="mt-20 flex w-full flex-col items-center gap-5 bg-surface px-5 py-20 md:py-[120px]"
+        className="mt-10 flex w-full flex-col items-center gap-6 bg-surface px-5 py-10 md:mt-20 md:gap-5 md:py-[120px]"
       >
-        <div className="flex w-full max-w-[1500px] flex-col gap-4 text-black sm:flex-row sm:items-end">
+        <div className="flex w-full max-w-[1500px] flex-col items-center gap-4 text-center text-black md:flex-row md:items-end md:text-left">
           <h2 id="recent-articles" className="type-heading-lg flex-1">
             Recent articles
           </h2>
-          <Link href="/journal" className="type-body underline sm:w-[320px] sm:text-right">
+          <Link href="/journal" className="type-body-lg underline md:w-[320px] md:text-right">
             View all articles
           </Link>
         </div>
-        <ul className="grid w-full max-w-[1500px] gap-x-4 gap-y-14 md:grid-cols-3">
+        <ul className="grid w-full max-w-[1500px] gap-x-4 gap-y-8 md:grid-cols-3">
           {recent.map((a) => (
             <li key={a.slug}>
               <ArticleCard article={a} headingLevel="h3" imageSizes="(max-width: 768px) 100vw, 33vw" />

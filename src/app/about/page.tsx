@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <header className="flex w-full flex-col items-center gap-10 pb-16 md:flex-row md:gap-4 md:pb-0">
-        <div className="relative h-[480px] w-full md:h-[800px] md:flex-1">
+      <header className="flex w-full flex-col items-center gap-8 md:flex-row md:gap-4">
+        <div className="relative h-[320px] w-full md:h-[800px] md:flex-1">
           <Image
             src="/images/about-hero.png"
             alt="Abstracted user interface forecasting a 16% off target for 2027 emissions goal alongside an image of a mossy tree on top of a light blue gradient background"
@@ -26,7 +26,7 @@ export default function AboutPage() {
             className="object-cover"
           />
         </div>
-        <div className="flex w-full flex-col items-center justify-center gap-14 px-5 md:flex-1 md:pr-10 md:pl-10 lg:pr-[105px] lg:pl-16">
+        <div className="flex w-full flex-col items-center justify-center gap-8 px-5 md:flex-1 md:gap-14 md:pr-10 md:pl-10 lg:pr-[105px] lg:pl-16">
           <div className="flex w-full max-w-[500px] flex-col gap-4">
             <p className="type-body text-muted">Our mission</p>
             <h1 className="type-heading text-black">
@@ -35,13 +35,15 @@ export default function AboutPage() {
             </h1>
           </div>
           <div className="w-full max-w-[500px]">
-            <ButtonPrimary href="#team">Meet the team</ButtonPrimary>
+            <ButtonPrimary href="#team" fullWidthOnMobile>
+              Meet the team
+            </ButtonPrimary>
           </div>
         </div>
       </header>
 
       <main>
-        <section className="flex w-full flex-col items-center gap-10 px-5 pt-20 pb-24 md:pt-[120px] md:pb-[160px]">
+        <section className="flex w-full flex-col items-center gap-8 px-5 py-10 md:gap-10 md:pt-[120px] md:pb-[160px]">
           <h2 className="type-heading w-full max-w-[1500px] text-center text-black">Our values</h2>
           <ValueCards tone="grey" />
         </section>

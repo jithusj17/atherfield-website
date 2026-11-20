@@ -13,7 +13,7 @@ export function CallToAction({ heading, buttonLabel, href, id, tone = "grey" }: 
   return (
     <aside
       id={id}
-      className={`flex w-full scroll-mt-16 flex-col items-center gap-8 px-5 py-20 md:py-[120px] ${tone === "grey" ? "bg-surface" : "bg-white"}`}
+      className={`flex w-full scroll-mt-16 flex-col items-center gap-8 px-5 py-10 md:py-[120px] ${tone === "grey" ? "bg-surface" : "bg-white"}`}
     >
       <h2 className="type-heading w-full max-w-[1500px] text-center text-black">
         {heading}

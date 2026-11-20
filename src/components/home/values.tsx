@@ -6,7 +6,7 @@ export function Values() {
   return (
     <section
       id="values"
-      className="relative flex w-full scroll-mt-16 flex-col items-center gap-10 px-5 py-20 md:py-[120px]"
+      className="relative flex w-full scroll-mt-16 flex-col items-center gap-8 px-5 py-10 md:gap-10 md:py-[120px]"
     >
       <Image src="/images/values-bg.png" alt="" fill sizes="100vw" className="object-cover" />
       <div className="relative w-full max-w-[1500px]">

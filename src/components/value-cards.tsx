@@ -27,12 +27,13 @@ export function ValueCards({ tone = "white" }: { tone?: "white" | "grey" }) {
         <li
           key={v.title}
           aria-label={`Principle ${i + 1}`}
-          className={`flex min-h-[246px] flex-col gap-6 rounded-2xl p-8 md:p-10 ${background}`}
+          className={`flex min-h-[246px] flex-col gap-6 rounded-2xl p-10 ${background}`}
         >
           <Image src={v.icon} alt="" width={42} height={42} />
+          {/* Value cards keep 20px text on every screen size, as in the Figma Mobile frames. */}
           <div className="flex flex-col gap-2 text-black">
-            <h3 className="type-title">{v.title}</h3>
-            <p className="type-body">{v.body}</p>
+            <h3 className="type-title-lg">{v.title}</h3>
+            <p className="type-body-lg">{v.body}</p>
           </div>
         </li>
       ))}

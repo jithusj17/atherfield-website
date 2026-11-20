@@ -25,10 +25,10 @@ export default function JournalPage() {
         </div>
       </header>
 
-      <main className="flex w-full flex-col items-center gap-10 px-5 pt-20 pb-10">
+      <main className="flex w-full flex-col items-center gap-10 px-5 pt-6 pb-4 md:pt-20 md:pb-10">
         <h1 className="type-heading w-full max-w-[612px] text-center text-black">Latest articles</h1>
 
-        <ul className="grid w-full max-w-[1540px] gap-x-4 gap-y-14 pb-20 md:grid-cols-2 md:gap-y-20 md:pb-[120px]">
+        <ul className="grid w-full max-w-[1540px] gap-x-4 gap-y-20 pb-10 md:grid-cols-2 md:pb-[120px]">
           {articles.map((a) => (
             <li key={a.slug}>
               <ArticleCard article={a} />

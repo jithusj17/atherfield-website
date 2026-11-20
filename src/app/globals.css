@@ -20,26 +20,57 @@
 /*
  * Text styles, one per Figma text style. Use these instead of repeating
  * font/size/leading/tracking utilities. Color is left to the caller.
+ *
+ * Sizes follow the Figma frames: the first value is the Mobile frame,
+ * the 48rem (768px) value is the Desktop frame.
  */
 
-/* Paragraph 2: serif body copy */
+/* Paragraph 2: serif body copy. 18px mobile, 20px desktop. */
 @utility type-body {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  @media (width >= 48rem) {
+    font-size: 20px;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* Paragraph 2 kept at 20px on every screen (value cards, team rows, back links). */
+@utility type-body-lg {
   font-family: var(--font-serif);
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: -0.04em;
 }
 
-/* Article paragraph: serif long-form copy */
+/* Article paragraph: serif long-form copy. 18px mobile, 20px desktop. */
 @utility type-article {
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.4;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
+  @media (width >= 48rem) {
+    font-size: 20px;
+    letter-spacing: -0.04em;
+  }
 }
 
-/* Paragraph 1 (medium): card and item titles */
+/* Paragraph 1 (medium): card and item titles. 18px mobile, 20px desktop. */
 @utility type-title {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  @media (width >= 48rem) {
+    font-size: 20px;
+  }
+}
+
+/* Paragraph 1 (medium) kept at 20px on every screen. */
+@utility type-title-lg {
   font-family: var(--font-sans);
   font-size: 20px;
   font-weight: 500;
@@ -47,19 +78,22 @@
   letter-spacing: -0.02em;
 }
 
-/* Paragraph 1: regular-weight sans value text */
+/* Paragraph 1: regular-weight sans value text. 18px mobile, 20px desktop. */
 @utility type-label {
   font-family: var(--font-sans);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.02em;
+  @media (width >= 48rem) {
+    font-size: 20px;
+  }
 }
 
-/* Header 4: section headings, 40px on desktop */
+/* Header 4: section headings. 24px mobile, 40px desktop. */
 @utility type-heading {
   font-family: var(--font-sans);
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -68,10 +102,10 @@
   }
 }
 
-/* Header 3: large section headings, 56px on desktop */
+/* Header 3: large section headings. 32px mobile, 56px desktop. */
 @utility type-heading-lg {
   font-family: var(--font-sans);
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -80,7 +114,7 @@
   }
 }
 
-/* Caption: monospace metadata */
+/* Caption: monospace metadata. */
 @utility type-caption {
   font-family: var(--font-mono);
   font-size: 14px;

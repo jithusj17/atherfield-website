@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export function FounderStory() {
   return (
-    <section className="flex w-full justify-center px-5 pb-20 md:pb-[120px]">
-      <div className="relative flex w-full max-w-[1500px] flex-col items-center gap-10 md:flex-row md:gap-4">
-        <div className="relative aspect-[612/700] w-full md:flex-1">
+    <section className="flex w-full justify-center px-5 pb-10 md:pb-[120px]">
+      <div className="relative flex w-full max-w-[1500px] flex-col items-center gap-4 md:flex-row">
+        <div className="relative aspect-square w-full md:aspect-[612/700] md:flex-1">
           <Image
             src="/images/founder.png"
             alt="Stylized blue duotone portrait of a woman with long hair facing slightly backward"
@@ -13,7 +13,7 @@ export function FounderStory() {
             className="object-cover"
           />
         </div>
-        <div className="flex w-full flex-col justify-center gap-10 md:flex-1 md:gap-14 lg:px-[105px]">
+        <div className="flex w-full flex-col justify-center gap-8 md:flex-1 md:gap-14 lg:px-[105px]">
           <div className="flex flex-col gap-2">
             <p className="type-body text-muted">Founder’s story</p>
             <h2 className="type-heading-lg text-black">Eunji Park</h2>

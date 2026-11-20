@@ -3,16 +3,20 @@ import Link from "next/link";
 type ButtonProps = {
   href: string;
   children: React.ReactNode;
+  /** Stretch to the full width of the container on mobile, as in the Figma Mobile frames. */
+  fullWidthOnMobile?: boolean;
   className?: string;
 };
 
 const base =
   "inline-flex items-center justify-center bg-black font-mono text-sm leading-none font-medium whitespace-nowrap text-white transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black";
 
+const mobileWidth = (full?: boolean) => (full ? "w-full md:w-auto" : "");
+
 /** Large black button with a white square bullet ("Button primary" in Figma). */
-export function ButtonPrimary({ href, children, className = "" }: ButtonProps) {
+export function ButtonPrimary({ href, children, fullWidthOnMobile, className = "" }: ButtonProps) {
   return (
-    <Link href={href} className={`${base} gap-2.5 p-4 ${className}`}>
+    <Link href={href} className={`${base} gap-2.5 p-4 ${mobileWidth(fullWidthOnMobile)} ${className}`}>
       <span aria-hidden className="size-1 bg-white" />
       {children}
     </Link>
@@ -20,9 +24,9 @@ export function ButtonPrimary({ href, children, className = "" }: ButtonProps) {
 }
 
 /** Compact black button ("Button secondary" in Figma). */
-export function ButtonSecondary({ href, children, className = "" }: ButtonProps) {
+export function ButtonSecondary({ href, children, fullWidthOnMobile, className = "" }: ButtonProps) {
   return (
-    <Link href={href} className={`${base} p-3 ${className}`}>
+    <Link href={href} className={`${base} p-3 ${mobileWidth(fullWidthOnMobile)} ${className}`}>
       {children}
     </Link>
   );
