@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { ButtonPrimary, ButtonSecondary } from "@/components/buttons";
+import { CallToAction } from "@/components/call-to-action";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
+import { articles } from "@/data/articles";
 
 const features = [
   { title: "Track", number: "001", body: "Emissions, energy, and waste across your value chain" },
@@ -28,11 +30,7 @@ const values = [
   },
 ];
 
-const articles = [
-  { image: "/images/journal-1.png", title: "How to Build a Climate-Ready Data Stack", category: "Tooling", readTime: "4 min" },
-  { image: "/images/journal-2.png", title: "How to Build a Climate-Ready Data Stack", category: "Tooling", readTime: "4 min" },
-  { image: "/images/journal-3.png", title: "How to Build a Climate-Ready Data Stack", category: "Tooling", readTime: "4 min" },
-];
+const latestArticles = articles.slice(0, 3);
 
 /** Two-line display heading: serif line over sans line (Header 1 + Header 2 styles). */
 function DisplayHeading({
@@ -180,8 +178,8 @@ export default function Home() {
 
         <div className="relative flex w-full max-w-[620px] flex-col items-center gap-6">
           <ul className="w-full">
-            {articles.map((a, i) => (
-              <li key={i} className="border-b border-divider first:border-t">
+            {latestArticles.map((a) => (
+              <li key={a.slug} className="border-b border-divider first:border-t">
                 <article className="flex items-start justify-between gap-4 py-6">
                   <div className="relative aspect-[165/100] w-[110px] shrink-0 sm:w-[165px]">
                     <Image src={a.image} alt="" fill sizes="165px" className="object-cover" />
@@ -198,7 +196,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <ButtonSecondary href="#journal">View all articles</ButtonSecondary>
+          <ButtonSecondary href="/journal">View all articles</ButtonSecondary>
 
           <div
             aria-hidden
@@ -240,12 +238,12 @@ export default function Home() {
         </figure>
       </section>
 
-      <aside id="contact" className="flex w-full scroll-mt-16 flex-col items-center gap-8 bg-surface px-5 py-20 md:py-[120px]">
-        <h2 className="w-full max-w-[1500px] text-center font-sans text-[32px] leading-none font-medium tracking-[-0.03em] text-black md:text-[40px]">
-          Ready to operationalize your sustainability goals?
-        </h2>
-        <ButtonPrimary href="#contact">Request a demo</ButtonPrimary>
-      </aside>
+      <CallToAction
+        id="contact"
+        heading="Ready to operationalize your sustainability goals?"
+        buttonLabel="Request a demo"
+        href="#contact"
+      />
 
       <Footer />
     </>
